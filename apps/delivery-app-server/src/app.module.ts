@@ -1,6 +1,6 @@
 import { Module } from "@nestjs/common";
-import { DeliveryPersonModule } from "./deliveryPerson/deliveryPerson.module";
 import { CustomerModule } from "./customer/customer.module";
+import { DeliveryPersonModule } from "./deliveryPerson/deliveryPerson.module";
 import { OrderModule } from "./order/order.module";
 import { OrderItemModule } from "./orderItem/orderItem.module";
 import { MenuItemModule } from "./menuItem/menuItem.module";
@@ -18,8 +18,8 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 @Module({
   controllers: [],
   imports: [
-    DeliveryPersonModule,
     CustomerModule,
+    DeliveryPersonModule,
     OrderModule,
     OrderItemModule,
     MenuItemModule,

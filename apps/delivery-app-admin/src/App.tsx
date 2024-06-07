@@ -5,14 +5,14 @@ import { theme } from "./theme/theme";
 import Login from "./Login";
 import "./App.scss";
 import Dashboard from "./pages/Dashboard";
-import { DeliveryPersonList } from "./deliveryPerson/DeliveryPersonList";
-import { DeliveryPersonCreate } from "./deliveryPerson/DeliveryPersonCreate";
-import { DeliveryPersonEdit } from "./deliveryPerson/DeliveryPersonEdit";
-import { DeliveryPersonShow } from "./deliveryPerson/DeliveryPersonShow";
 import { CustomerList } from "./customer/CustomerList";
 import { CustomerCreate } from "./customer/CustomerCreate";
 import { CustomerEdit } from "./customer/CustomerEdit";
 import { CustomerShow } from "./customer/CustomerShow";
+import { DeliveryPersonList } from "./deliveryPerson/DeliveryPersonList";
+import { DeliveryPersonCreate } from "./deliveryPerson/DeliveryPersonCreate";
+import { DeliveryPersonEdit } from "./deliveryPerson/DeliveryPersonEdit";
+import { DeliveryPersonShow } from "./deliveryPerson/DeliveryPersonShow";
 import { OrderList } from "./order/OrderList";
 import { OrderCreate } from "./order/OrderCreate";
 import { OrderEdit } from "./order/OrderEdit";
@@ -60,18 +60,18 @@ const App = (): React.ReactElement => {
         loginPage={Login}
       >
         <Resource
-          name="DeliveryPerson"
-          list={DeliveryPersonList}
-          edit={DeliveryPersonEdit}
-          create={DeliveryPersonCreate}
-          show={DeliveryPersonShow}
-        />
-        <Resource
           name="Customer"
           list={CustomerList}
           edit={CustomerEdit}
           create={CustomerCreate}
           show={CustomerShow}
+        />
+        <Resource
+          name="DeliveryPerson"
+          list={DeliveryPersonList}
+          edit={DeliveryPersonEdit}
+          create={DeliveryPersonCreate}
+          show={DeliveryPersonShow}
         />
         <Resource
           name="Order"

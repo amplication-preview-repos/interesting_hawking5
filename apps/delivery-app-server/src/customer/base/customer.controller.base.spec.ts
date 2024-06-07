@@ -18,25 +18,41 @@ import { CustomerService } from "../customer.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  address: "exampleAddress",
   createdAt: new Date(),
+  email: "exampleEmail",
   id: "exampleId",
+  name: "exampleName",
+  phone: "examplePhone",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
+  address: "exampleAddress",
   createdAt: new Date(),
+  email: "exampleEmail",
   id: "exampleId",
+  name: "exampleName",
+  phone: "examplePhone",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
+    address: "exampleAddress",
     createdAt: new Date(),
+    email: "exampleEmail",
     id: "exampleId",
+    name: "exampleName",
+    phone: "examplePhone",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
+  address: "exampleAddress",
   createdAt: new Date(),
+  email: "exampleEmail",
   id: "exampleId",
+  name: "exampleName",
+  phone: "examplePhone",
   updatedAt: new Date(),
 };
 

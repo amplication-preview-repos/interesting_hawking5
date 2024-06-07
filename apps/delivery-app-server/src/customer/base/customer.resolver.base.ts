@@ -17,6 +17,8 @@ import { Customer } from "./Customer";
 import { CustomerCountArgs } from "./CustomerCountArgs";
 import { CustomerFindManyArgs } from "./CustomerFindManyArgs";
 import { CustomerFindUniqueArgs } from "./CustomerFindUniqueArgs";
+import { CreateCustomerArgs } from "./CreateCustomerArgs";
+import { UpdateCustomerArgs } from "./UpdateCustomerArgs";
 import { DeleteCustomerArgs } from "./DeleteCustomerArgs";
 import { CustomerService } from "../customer.service";
 @graphql.Resolver(() => Customer)
@@ -48,6 +50,35 @@ export class CustomerResolverBase {
       return null;
     }
     return result;
+  }
+
+  @graphql.Mutation(() => Customer)
+  async createCustomer(
+    @graphql.Args() args: CreateCustomerArgs
+  ): Promise<Customer> {
+    return await this.service.createCustomer({
+      ...args,
+      data: args.data,
+    });
+  }
+
+  @graphql.Mutation(() => Customer)
+  async updateCustomer(
+    @graphql.Args() args: UpdateCustomerArgs
+  ): Promise<Customer | null> {
+    try {
+      return await this.service.updateCustomer({
+        ...args,
+        data: args.data,
+      });
+    } catch (error) {
+      if (isRecordNotFoundError(error)) {
+        throw new GraphQLError(
+          `No resource was found for ${JSON.stringify(args.where)}`
+        );
+      }
+      throw error;
+    }
   }
 
   @graphql.Mutation(() => Customer)

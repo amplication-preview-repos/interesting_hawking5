@@ -33,8 +33,12 @@ export class CustomerControllerBase {
     return await this.service.createCustomer({
       data: data,
       select: {
+        address: true,
         createdAt: true,
+        email: true,
         id: true,
+        name: true,
+        phone: true,
         updatedAt: true,
       },
     });
@@ -48,8 +52,12 @@ export class CustomerControllerBase {
     return this.service.customers({
       ...args,
       select: {
+        address: true,
         createdAt: true,
+        email: true,
         id: true,
+        name: true,
+        phone: true,
         updatedAt: true,
       },
     });
@@ -64,8 +72,12 @@ export class CustomerControllerBase {
     const result = await this.service.customer({
       where: params,
       select: {
+        address: true,
         createdAt: true,
+        email: true,
         id: true,
+        name: true,
+        phone: true,
         updatedAt: true,
       },
     });
@@ -89,8 +101,12 @@ export class CustomerControllerBase {
         where: params,
         data: data,
         select: {
+          address: true,
           createdAt: true,
+          email: true,
           id: true,
+          name: true,
+          phone: true,
           updatedAt: true,
         },
       });
@@ -114,8 +130,12 @@ export class CustomerControllerBase {
       return await this.service.deleteCustomer({
         where: params,
         select: {
+          address: true,
           createdAt: true,
+          email: true,
           id: true,
+          name: true,
+          phone: true,
           updatedAt: true,
         },
       });

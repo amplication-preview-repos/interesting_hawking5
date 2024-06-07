@@ -1,1 +1,6 @@
-export type CustomerUpdateInput = {};
+export type CustomerUpdateInput = {
+  address?: string | null;
+  email?: string | null;
+  name?: string | null;
+  phone?: string | null;
+};
